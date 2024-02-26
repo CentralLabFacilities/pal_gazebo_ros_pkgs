@@ -182,6 +182,8 @@ void GazeboRosP3D::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
     this->last_frame_veul_ = this->reference_link_->WorldAngularVel();
   }
 
+  ROS_INFO_STREAM_NAMED("p3d", "Starting p3d plugin on topic: '" << this->topic_name_ << "' ['" << this->tf_frame_name_ << "'->'" << this->link_name_ << "']");
+
 
   // start custom queue for p3d
   this->callback_queue_thread_ = boost::thread(
