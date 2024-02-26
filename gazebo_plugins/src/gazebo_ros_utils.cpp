@@ -89,6 +89,7 @@ void GazeboRos ::readCommonParameter() {
     {
         tf_prefix_ = namespace_;
         boost::trim_right_if(tf_prefix_,boost::is_any_of("/"));
+        boost::trim_left_if(tf_prefix_,boost::is_any_of("/"));
     }
     ROS_INFO_NAMED("utils", "%s: <tf_prefix> = %s", info(), tf_prefix_.c_str());
 }
